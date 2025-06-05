@@ -4,16 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Another People Place</title>
+
+  <!-- Distressed typewriter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+
   <style>
-    body {
+    html, body {
       margin: 0;
-      font-family: 'Courier New', Courier, monospace;
+      padding: 0;
+      font-family: 'Special Elite', monospace;
       background: #ffffff;
       color: #111111;
+    }
+
+    body {
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 2rem;
+      position: relative;
+      z-index: 1;
     }
 
     header {
@@ -22,16 +32,17 @@
     }
 
     h1 {
-      font-size: 2.8rem;
+      font-size: 3rem;
       margin: 0.5rem 0;
       color: #000;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      transform: rotate(-0.8deg);
     }
 
     p.tagline {
       font-size: 1.1rem;
-      color: #555;
+      color: #444;
     }
 
     .event {
@@ -42,6 +53,7 @@
       max-width: 600px;
       width: 100%;
       text-align: left;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
     }
 
     .event h2 {
@@ -87,6 +99,21 @@
       margin-top: 4rem;
       font-size: 0.9rem;
       color: #777;
+      text-align: center;
+    }
+
+    /* Grain overlay */
+    .noise-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url('https://images.unsplash.com/photo-1520699514109-b478c7b48d3b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bm9pc2UlMjB0ZXh0dXJlfGVufDB8fDB8fHww');
+      opacity: 0.07;
+      pointer-events: none;
+      z-index: 0;
+      mix-blend-mode: multiply;
     }
 
     @media (max-width: 600px) {
@@ -101,9 +128,11 @@
   </style>
 </head>
 <body>
+  <div class="noise-overlay"></div>
+
   <header>
     <h1>Another People Place</h1>
-    <p class="tagline">A dance party and soundsystem in Glasgow</p>
+    <p class="tagline">A party and soundsystem in Glasgow</p>
   </header>
 
   <section class="event">
